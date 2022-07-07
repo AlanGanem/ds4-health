@@ -120,7 +120,7 @@ A nova imagem parece um pouco mais comprimida, isso é, pontos já próximos fic
 
 Agora iremos fitar um modelo KNN para tentarmos separar as regiões de pseudo-etiologias (pseudo pois não sabemos a label real) observadas nos pontos verdes, que representam imagems de lesão de SLE.
 
-Plotando agora o gráfico dando enfase de cor de acordo com as probabilidades ed AVC obtidas, podemos observar que o nosso modelo KNN conseguiu com sucesso selecionar a região do espaço que acreditamos estar associado a uma etiologia desmielinizante:
+Plotando agora o gráfico dando enfase de cor de acordo com as probabilidades ed AVC obtidas, podemos observar que o nosso modelo KNN conseguiu com sucesso selecionar a região do espaço que acreditamos estar associado a uma etiologia desmielinizante (região mais clara do gráfico, com probabilidade próxima de zero):
 
 ![alt text](./images/lasso_knn_proba.png "Figura 7")
 
@@ -130,7 +130,7 @@ Um split seguro entre etiologias pode ser feito com o threshold de probabilidade
 
 ![alt text](./images/knn_dist_threshold.png "Figura 8")
 
-Ou seja, toda agregação de imagens de um mesmo paciente com SLE com probabilidade média menor que 30% de pertencer à classe AVC será considerado um caso de etiologia desmielinizante.
+Ou seja, toda agregação de imagens de um mesmo paciente com SLE com probabilidade média menor que 30% de pertencer à classe AVC será considerado um caso de etiologia desmielinizante. Um ponto interessante que deve-se salientar é que o knn não tem acesso as labels de EM e por isso classifica elas como AVC. Isso é interessante pois mostra que as pseudo-etiologias desmielinizantes para SLE estão distantes de AVC no espaço de features, mas estão também distantes de EM, o que indica uma manifestação diferente de EM!
 
 A fim de ver como essas agregações se comportam no espaço reduzido de dimensões, calcula-se o centroide nesse espaço para cada conjunto de imagens de um mesmo paciente, obtendo-se o seguinte gráfico de dispersão:
 
