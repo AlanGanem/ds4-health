@@ -22,7 +22,7 @@ O presente projeto foi originado no contexto das atividades da disciplina de pó
 
  |Nome  | RA | Especialização|
  |--|--|--|
- | Alan Motta Ganem  | 123456  | Computação|
+ | Alan Motta Ganem  | 178777  | Computação|
 
 # Introdução
 > Apresentação de forma resumida do problema (contexto) e a pergunta que se quer responder.
